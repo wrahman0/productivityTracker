@@ -1,0 +1,159 @@
+
+body{
+	font-family: Cantora One, san-serif;
+	margin: 40px; 
+	background-color: #999;
+	
+}
+#mainCanvas { 
+	/*background: #FFF; 
+	border: #000 1px solid;*/
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	display: block;
+}
+
+#theList li{
+	margin-left: 85px;
+	font-size: 22px;
+	font-family: Cantora One, san-serif;
+}
+
+
+
+#container{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#leftbox{
+	margin-left: 100px;
+}
+#taskList{
+
+	margin-left: 100px;
+}
+
+#entryField{
+	width: 400px;
+	background: #1A1A1A;
+    border-radius: 2em;
+    border: none;
+    margin: 2em;
+    padding: 0.8em;
+    color: #A2A2A2;
+    font-size: 1.1em;
+    padding-left: 1.5em;
+    padding-left: 20px;
+	padding-right: 0;
+	margin-left: auto;
+	margin-right: 292px;
+	display: block;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%)
+}
+.btn {
+	
+	background: #1A1A1A;
+    border-radius: 2em;
+    border: none;
+    padding: 0.8em;
+    color: #A2A2A2;
+    padding-left: 20px;
+	padding-right: 20px;
+	display: inline-block;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%);
+    margin-right: 27px;
+    width: 119px;
+
+}
+
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+#btn_grp{
+
+	margin-left: 188px;
+
+}
+
+.checkListItems{
+
+	width: 800px;
+	background: #1A1A1A;
+    border-radius: 2em;
+    border: none;
+    margin: 2em;
+    padding: 0.8em;
+    color: #A2A2A2;
+    font-size: 1.1em;
+    padding-left: 1.5em;
+    padding-left: 20px;
+	padding-right: 0;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-right: 92px;
+	display: block;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%)
+
+}
+
+.divider{
+    width:10px;
+    height:auto;
+    display:inline-block;
+}
+
+#dropMenu{
+
+	float:right;
+	margin-right: 40px;
+
+}
+
+.exitIcon{
+
+	color: #FFF;
+	position:relative;
+    float:right;
+    font-family: sans-serif;
+
+}
+
+.exitIcon:hover{
+	cursor: pointer;
+}
+
+
+#optionTable{
+	position:relative;
+    float:right;
+    margin-right: 20px;
+}
+
+
+#dropMenuProductivity{
+
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-right: 27px;
+	float: right;
+}
+
+.loggedHours{
+	width: 50px;
+	border-radius: 4px;
+	margin-left: 2px;
+	margin-right: 2px;
+	padding-left: 4px;
+}
+
