@@ -1,0 +1,15 @@
+Legend
+====================================================
+* 		-- Important
+** 		-- Very important
+*** 	-- All attention on this task
+
+!       -- Known Bugs Errors
+//  	-- Resolved
+
+Tasks
+====================================================
+
+**   : Implement testing
+***  : Refactor the code. Make it easier to work with
+
