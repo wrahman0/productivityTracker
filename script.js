@@ -145,20 +145,15 @@ function init(ctx){
 
 function renderAssets (ctx) {
 
-	//Rendering settingsImg icon
-	var settingsImg = new Image();
-	settingsImg.src = 'assets/icons/settings.png';
-	console.log(settingsImg.naturalHeight);
-	settingsImg.onload = function(){ 
-		ctx.drawImage(settingsImg, ctx.canvas.width - settingsImg.naturalWidth, yinit - 15,50, 50*(settingsImg.naturalHeight/settingsImg.naturalWidth));
-	}
-	settingsImg.addEventListener('click', settingsPrompt);
-}
-
-function settingsPrompt(){
-
-	console.log("HIT!");
-
+	// //Rendering settingsImg icon
+	// var settingsImg = new Image();
+	// settingsImg.src = 'assets/icons/settings.png';
+	// console.log(settingsImg.naturalHeight);
+	// // settingsImg.onload = function(){ 
+	// // 	ctx.drawImage(settingsImg, ctx.canvas.width - settingsImg.naturalWidth, yinit - 15,50, 50*(settingsImg.naturalHeight/settingsImg.naturalWidth));
+	// // }
+	// settingsImg.addEventListener('click', settingsPrompt);
+	
 }
 
 function renderTextToolTip(i, ctx, tx, ty){
