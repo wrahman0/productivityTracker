@@ -5,6 +5,61 @@ body{
 	background-color: #999;
 	
 }
+
+#leftBarTitle{
+
+	font-size: 30px;
+	font-family: sans-serif;
+
+
+}
+
+.infoSnippet{
+
+
+	height: 100px;
+	width: 75%;
+
+}
+
+#leftBar {
+	
+	padding: 10px;
+	background: #666;
+	position: fixed;
+	width: 25%;
+	height: 100%;
+	top:0;
+	left: 0;
+	overflow: scroll;
+
+}
+
+#centerBar{
+
+	padding: 10px;
+	background: #999;
+	position: fixed;
+	width: 50%;
+	height: 100%;
+	top:0;
+	left: 26%;
+
+}
+
+#rightBar{
+
+	padding: 10px;
+	background: #666;
+	position: fixed;
+	width: 25%;
+	height: 100%;
+	top:0;
+	right: 0%;
+
+}
+
+
 #mainCanvas { 
 	/*background: #FFF; 
 	border: #000 1px solid;*/
