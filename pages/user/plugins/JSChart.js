@@ -1,3 +1,4 @@
+
 $(function () {
         $('#container-Chart').highcharts({
             chart: {
