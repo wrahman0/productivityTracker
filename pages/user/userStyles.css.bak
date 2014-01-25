@@ -1,0 +1,275 @@
+
+body{
+	font-family: Cantora One, san-serif;
+	margin: 40px; 
+	background-color: #999;
+	
+}
+
+#container-Chart{
+
+	width: 600px; height: 400px;
+	margin: auto;
+}
+
+.mainClock{
+
+	width: 500px;
+	position: fixed;
+	left: 80px;
+
+}
+
+#taskPost{
+
+	width: 250px;
+	margin-top: 4px;
+	min-height: 40px;
+	overflow: scroll;
+
+
+}
+
+#btnGroup{
+
+	margin-left: 29px;
+
+}
+
+.infoButton {
+
+	background: #1A1A1A;
+    border-radius: 2em;
+    border: none;
+    padding: 0.8em;
+    color: #A2A2A2;
+    padding-left: 20px;
+	padding-right: 20px;
+	display: inline-block;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%);
+    margin-right: 10px;
+    width: 90px;
+    float: left;
+
+}
+
+#leftBarTitle{
+
+	font-size: 30px;
+	font-family: sans-serif;
+	
+}
+
+.infoSnippet{
+
+
+	min-height: 100px;
+	width: 350px;
+	background-color: #999;
+	border-radius: 10px;
+	padding: 10px;
+	margin-left: -80px;
+	right: 40px;
+	margin-bottom: 10px;
+
+}
+#taskElement{
+	border:2px solid;
+	border-radius:25px;
+	background-color:gray;
+	padding:10px;
+	
+}
+
+#leftBar {
+	
+	padding: 10px;
+	background: #666;
+	position: absolute;
+	width: 25%;
+	height: 100%;
+	top:0;
+	left: 0;
+	overflow: scroll;
+
+}
+
+#centerBar{
+
+	padding: 10px;
+	background: #999;
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	top:0;
+	left: 25%;
+	text-align:center;
+}
+
+#rightBar{
+
+	padding: 10px;
+	background: #666;
+	position: absolute;
+	width: 25%;
+	height: 100%;
+	top:0;
+	right: 0%;
+	left: 75%;
+	overflow: scroll;
+
+}
+
+
+#mainCanvas { 
+	/*background: #FFF; 
+	border: #000 1px solid;*/
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	display: block;
+}
+
+#theList{
+	margin-left: 85px;
+	font-size: 22px;
+	font-family: Cantora One, san-serif;
+}
+
+
+
+#container{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+#leftbox{
+	margin-left: 100px;
+}
+#taskList{
+
+}
+
+#entryField{
+	width: 400px;
+	background: #1A1A1A;
+    border-radius: 2em;
+    border: none;
+    margin: 2em;
+    padding: 0.8em;
+    color: #A2A2A2;
+    font-size: 1.1em;
+    padding-left: 1.5em;
+    padding-left: 20px;
+	padding-right: 0;
+	margin-left: auto;
+	margin-right: 292px;
+	display: block;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%)
+}
+.btn {
+	
+	background: #1A1A1A;
+    border-radius: 2em;
+    border: none;
+    padding: 0.8em;
+    color: #A2A2A2;
+    padding-left: 20px;
+	padding-right: 20px;
+	display: inline-block;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%);
+    margin-right: 27px;
+    width: 119px;
+
+}
+
+.btn:active {
+	position:relative;
+	top:1px;
+}
+
+#btn_grp{
+
+	margin-left: 188px;
+
+}
+
+.checkListItems{
+
+	width: 800px;
+	background: #1A1A1A;
+    border-radius: 2em;
+    border: none;
+    margin: 2em;
+    padding: 0.8em;
+    color: #A2A2A2;
+    font-size: 1.1em;
+    padding-left: 1.5em;
+    padding-left: 20px;
+	padding-right: 0;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-right: 92px;
+	display: block;
+    outline: none;
+    box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%)
+
+}
+
+.divider{
+    width:10px;
+    height:auto;
+    display:inline-block;
+}
+
+#dropMenu{
+
+	float:right;
+	margin-right: 40px;
+
+}
+
+.exitIcon{
+
+	color: #FFF;
+	position:relative;
+    float:right;
+    font-family: sans-serif;
+
+}
+
+.exitIcon:hover{
+	cursor: pointer;
+}
+
+
+#optionTable{
+	position:relative;
+    float:right;
+    margin-right: 20px;
+}
+
+
+#dropMenuProductivity{
+
+	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-right: 27px;
+	float: right;
+}
+
+.loggedHours{
+	width: 50px;
+	border-radius: 4px;
+	margin-left: 2px;
+	margin-right: 15px;
+	padding-left: 4px;
+	float: right;
+}

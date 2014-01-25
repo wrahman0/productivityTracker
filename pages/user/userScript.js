@@ -138,12 +138,6 @@ function init(ctx){
 	});
 }
 
-function enterTaskToDiv (userInput){
-	
-	var currentTasks = document.getElementById("rightBar");
-	currentTasks.innerHTML += '<div class="infoSnippet">' + userInput +'<input class="infoButton" type="button" value="Continue"></div>';
-
-}
 
 function renderAssets (ctx) {
 
@@ -415,19 +409,15 @@ function renderDisplay(){
 	for (var i = 0; i < localStorage.length; i++)
 		if(localStorage.key(i).substring(0,4) == 'exit')
 			taskDisplay.innerHTML += localStorage.getItem(localStorage.key(i));
-		
 }
 
 function enterTaskToList(userInput){
-	
-	// addToStorage = "<section class='checkListItems'>" + userInput + "<table id='optionTable'> <tr><th> <input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'></th><th><select class='course' id='dropMenuCourse"+items+"'><option>Course</option><option>ECE106</option><option>ECE124</option><option>CS138</option><option>MATH119</option><option>SE102</option></select></th><th><select class='prod' id='dropMenuProductivity"+items+"'><option>Productivity</option><option>Very Productive</option><option>Productive</option><option>Not Productive</option></select></th><th><div class='exitIcon' id='exit"+items+"'>X</div></th></tr></table></section>";
-	addToStorage = "<select><option>Productivity</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>";
-	addToStorage +=	"</select><div id='taskPost'>";
+	addToStorage = "<div id = 'taskElement'><select><option>Productivity</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>";
+	addToStorage +=	"</select><br><h1 style=\"font-size:20px;\">";
 	addToStorage += userInput;
-	addToStorage += "</div><br><div id='btnGroup'><input id='continueBtn'class='infoButton' type='button' value='Continue'><input id='pauseBtn' class='infoButton' type='button' value='Pause'><input id='finish' class='infoButton' type='button' value='Finish'></div>";
+	addToStorage += "</h1><div id='btnGroup'><input id='continueBtn'class='infoButton' type='button' value='Continue'><input id='pauseBtn' class='infoButton' type='button' value='Pause'><input id='finish' class='infoButton' type='button' value='Finish'></div><br><br></div><br>";
 	localStorage.setItem("exit"+items, addToStorage);
 	items++;
-	enterTaskToDiv(userInput);
 	localStorage['taskDescriptions'] = JSON.stringify(userInput);
 	renderDisplay();
 
@@ -435,7 +425,7 @@ function enterTaskToList(userInput){
 
 
 function enterHrToDB (hours){
-
+/*
 	monthArray = JSON.parse(localStorage.getItem('monthArray'));
 	monthArray[d.getMonth()].dailyHrs[d.getDate()-1] += parseFloat(hours);
 	
@@ -453,5 +443,5 @@ function enterHrToDB (hours){
 
 	// renderGraph(ctx, d.getMonth(),'#1D568E');
 	location.reload();
-
+*/
 }

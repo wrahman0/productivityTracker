@@ -8,7 +8,8 @@ body{
 
 #container-Chart{
 
-	width: 600px; height: 400px; margin-left: 50px;
+	width: 600px; height: 400px;
+	margin: auto;
 }
 
 .mainClock{
@@ -73,13 +74,20 @@ body{
 	margin-bottom: 10px;
 
 }
+#taskElement{
+	border:2px solid;
+	border-radius:25px;
+	background-color:gray;
+	padding:10px;
+	
+}
 
 #leftBar {
 	
 	padding: 10px;
 	background: #666;
-	position: fixed;
-	width: 20%;
+	position: absolute;
+	width: 25%;
 	height: 100%;
 	top:0;
 	left: 0;
@@ -91,23 +99,24 @@ body{
 
 	padding: 10px;
 	background: #999;
-	position: fixed;
-	width: 55%;
+	position: absolute;
+	width: 50%;
 	height: 100%;
 	top:0;
-	left: 26%;
-
+	left: 25%;
+	text-align:center;
 }
 
 #rightBar{
 
 	padding: 10px;
 	background: #666;
-	position: fixed;
+	position: absolute;
 	width: 25%;
 	height: 100%;
 	top:0;
 	right: 0%;
+	left: 75%;
 	overflow: scroll;
 
 }
@@ -124,7 +133,7 @@ body{
 	display: block;
 }
 
-#theList li{
+#theList{
 	margin-left: 85px;
 	font-size: 22px;
 	font-family: Cantora One, san-serif;
@@ -142,23 +151,18 @@ body{
 }
 #taskList{
 
-	margin-left: 100px;
 }
 
 #entryField{
 	width: 400px;
 	background: #1A1A1A;
     border-radius: 2em;
-    border: none;
-    margin: 2em;
+    margin: 0 auto;
     padding: 0.8em;
     color: #A2A2A2;
     font-size: 1.1em;
     padding-left: 1.5em;
-    padding-left: 20px;
-	padding-right: 0;
-	margin-left: auto;
-	margin-right: 292px;
+	padding-right: 1.5em;
 	display: block;
     outline: none;
     box-shadow: 0 4px 6px -5px hsl(0, 0%, 40%), inset 0px 4px 6px -5px hsl(0, 0%, 2%)
@@ -183,12 +187,6 @@ body{
 .btn:active {
 	position:relative;
 	top:1px;
-}
-
-#btn_grp{
-
-	margin-left: 188px;
-
 }
 
 .checkListItems{
