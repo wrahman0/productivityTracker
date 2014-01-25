@@ -102,7 +102,6 @@ var toolTipTitleColor = 'black';
 var toolTipInfoColor = 'black';
 var toolTipBgColor = 'rgba(130,182,255,0.8)';
 
-
 intervalTickCount = 5;
 maxIntervalValue = Math.ceil(getMax(JSON.parse(localStorage.getItem('monthArray'))[d.getMonth()].dailyHrs));
 
@@ -114,8 +113,6 @@ function init(ctx){
 	//Rendering component
 	renderGraph(ctx, d.getMonth(),'#1D568E');
 	renderDisplay(ctx);
-
-	enterTaskToDiv ();
 
 	// var ctx = document.getElementById('mainCanvas').getContext('2d');
 	var text = document.getElementById("entryField");
@@ -145,11 +142,10 @@ function init(ctx){
 	});
 }
 
-function enterTaskToDiv (){
-
-
-	var left = document.getElementById("leftBar");
-	left.innerHTML += '<div class="infoSnippet">Task1' + '</div>';
+function enterTaskToDiv (userInput){
+	
+	var currentTasks = document.getElementById("rightBar");
+	currentTasks.innerHTML += '<div class="infoSnippet">' + userInput +'<input class="infoButton" type="button" value="Continue"></div>';
 
 }
 
@@ -234,8 +230,10 @@ function mouseDetection (event){
 	}
 }
 
-function daysInMonth(month,year) {
+function daysInMonth(month,year){
+
 	return new Date(year, month, 0).getDate();
+
 }
 
 function getMax(arrayToPlot){
@@ -427,7 +425,8 @@ function enterTaskToList(userInput){
 	addToStorage = "<section class='checkListItems'>" + userInput + "<table id='optionTable'> <tr><th> <input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'></th><th><select class='course' id='dropMenuCourse"+items+"'><option>Course</option><option>ECE106</option><option>ECE124</option><option>CS138</option><option>MATH119</option><option>SE102</option></select></th><th><select class='prod' id='dropMenuProductivity"+items+"'><option>Productivity</option><option>Very Productive</option><option>Productive</option><option>Not Productive</option></select></th><th><div class='exitIcon' id='exit"+items+"'>X</div></th></tr></table></section>";
 	localStorage.setItem("exit"+items, addToStorage);
 	items++;
-	enterTaskToDiv();
+	enterTaskToDiv(userInput);
+	localStorage['taskDescriptions'] = JSON.stringify(userInput);
 	renderDisplay();
 
 }
@@ -445,6 +444,7 @@ function enterHrToDB (hours){
 	//TEST CODE	
 
 	localStorage['monthArray'] = JSON.stringify(monthArray);
+
 	// renderGraph(ctx, d.getMonth(),'#1D568E');
 	location.reload();
 
