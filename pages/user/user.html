@@ -3,9 +3,11 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="userStyles.css">
-		<link rel="stylesheet" href="/plugins/flipclock.css">
-		<script src="jquery.js"></script>
+		<link rel="stylesheet" href="plugins/flipclock.css">
+		<script src="plugins/jquery.js"></script>
+		<script src="plugins/flipclock.min.js"></script>
 		<script src="userScript.js"></script>
+		
 	</head>
 
 	<body>
@@ -27,6 +29,7 @@
 				<div id="taskList">
 					<div class="infoSnippet">
 						<input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'>
+						<select>
 							<option>Productivity</option>
 							<option>Very Productive</option>
 							<option>Productive</option>
@@ -44,9 +47,17 @@
 					<div class="infoSnippet">
 						<input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'>
 							<option>Productivity</option>
-							<option>Very Productive</option>
-							<option>Productive</option>
-							<option>Not Productive</option>
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
 						</select>
 						<div id="taskPost">OVERFLOWING...OVERFLOWING...OVERFLOWING...OVERFLOWING...</div>
 						<br>
@@ -57,9 +68,11 @@
 						</div>
 					</div>
 				</div>
-
 			</div>
 			
 		</div>
+
+		
+
 	</body>
 </html>
