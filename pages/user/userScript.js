@@ -17,61 +17,67 @@
 var nameArray = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 window.addEventListener("load",fillupStorage);
-
 var i, j;
-var d   = new Date();
 var items = 0;
 var i   = 0;
 var d   = new Date();
-var jan = new Object();
-var feb = new Object();
-var mar = new Object();
-var apr = new Object();
-var may = new Object();
-var jun = new Object();
-var jul = new Object();
-var aug = new Object();
-var sep = new Object();
-var oct = new Object();
-var nov = new Object();
-var dec = new Object();
-var monthArray = [jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec];
+var monthArray = new Array(12);
+for(i = 0; i < monthArray.length;i++){
+	monthArray[i] = new MonthDate(i+1);
+}
+
+function MonthDate(monthNumber){
+	this.monthNumber = monthNumber;
+			switch (monthNumber){
+				case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+					this.days = 31;
+					break;
+				case 4: case 6: case 9: case 11:
+					this.days = 30;
+					break;
+				case 2:
+					if (!d.getFullYear()%400) {this.days = 29;}
+					else if (!d.getFullYear()%100) {this.days = 28;}
+					else if (!d.getFullYear()%4) {this.days = 29;}
+					else {this.days = 28;}
+					break;
+				default:
+					console.log("Month exception");
+					break;
+			}
+	this.dailyHrs = new Array(this.days);
+	this.getName = getMonthName;
+	this.resetDailyHoursToZero = resetToZero;
+}
+
+function getMonthName(){
+	if(monthNumber>=1&&monthNumber<=12){
+		return nameArray[monthNumber-1];
+	}else{
+		console.log("Month exception");
+		return "Month exception";
+	}
+}
+
+function resetToZero(){
+	for(i = 0; i < this.dailyHrs.length();i++){
+		this.dailyHrs[i] = 0;
+	}
+}
 
 function fillupStorage(){
 
 	if (localStorage.getItem('monthArray') === null){
 
-		for (i = 0; i < monthArray.length; i++){
-			switch (i+1){
-				case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-					monthArray[i].days = 31;
-					monthArray[i].dailyHrs = new Array(31);
-					break;
-				case 4: case 6: case 9: case 11:
-					monthArray[i].days = 30;
-					monthArray[i].dailyHrs = new Array(30);
-					break;
-				case 2:
-					if (!d.getFullYear()%400) {monthArray[i].days = 29;monthArray[i].dailyHrs = new Array(29)}
-					else if (!d.getFullYear()%100) {monthArray[i].days = 28;monthArray[i].dailyHrs = new Array(28)}
-					else if (!d.getFullYear()%4) {monthArray[i].days = 29;monthArray[i].dailyHrs = new Array(29)}
-					else {monthArray[i].days = 28;monthArray[i].dailyHrs = new Array(28)}
-					break;
-				default:
-					console.log("Year exception");
-					break;
-			}
+		for(i = 0; i < monthArray,length();i++){
+			monthArray[i] = new MonthDate(i+1);
 		}
 
 		//initial values of dailyHrs to zero;
-		for (i = 0; i < monthArray.length; i++){
-			for (j = 0; j < monthArray[i].dailyHrs.length; j++)
-				monthArray[i].dailyHrs[j]=0;
+		for (i = 0; i < monthArray.length(); i++){
+			monthsArray[i].resetDailyHoursToZero();
 		}
 
-		for (i = 0; i < monthArray.length; i++){
-			monthArray[i].name = nameArray[i];
-		}
 		localStorage['monthArray'] = JSON.stringify(monthArray);
 	}
 	var ctx = document.getElementById('mainCanvas').getContext('2d');
@@ -103,6 +109,7 @@ var toolTipInfoColor = 'black';
 var toolTipBgColor = 'rgba(130,182,255,0.8)';
 
 intervalTickCount = 5;
+
 maxIntervalValue = Math.ceil(getMax(JSON.parse(localStorage.getItem('monthArray'))[d.getMonth()].dailyHrs));
 
 while (maxIntervalValue%intervalTickCount != 0)maxIntervalValue++;
@@ -383,7 +390,7 @@ function renderGraph(ctx, month, color){
 	for (i = 0; i < arrayToPlot.length; i++){
 		if (arrayToPlot[i] != 0){
 			ctx.beginPath();
-			dropMarker(xinit+i*((width+xinit)/arrayToPlot.length),height+yinit-(arrayToPlot[i])*intervalPixel,JSON.parse(localStorage.getItem('monthArray'))[month].name, i, arrayToPlot);
+			dropMarker(xinit+i*((width+xinit)/arrayToPlot.length),height+yinit-(arrayToPlot[i])*intervalPixel,JSON.parse(localStorage.getItem('monthArray'))[month].getName, i, arrayToPlot);
 		}
 	}
 
@@ -422,7 +429,8 @@ function renderDisplay(){
 
 function enterTaskToList(userInput){
 	
-	addToStorage = "<section class='checkListItems'>" + userInput + "<table id='optionTable'> <tr><th> <input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'></th><th><select class='course' id='dropMenuCourse"+items+"'><option>Course</option><option>ECE106</option><option>ECE124</option><option>CS138</option><option>MATH119</option><option>SE102</option></select></th><th><select class='prod' id='dropMenuProductivity"+items+"'><option>Productivity</option><option>Very Productive</option><option>Productive</option><option>Not Productive</option></select></th><th><div class='exitIcon' id='exit"+items+"'>X</div></th></tr></table></section>";
+	// addToStorage = "<section class='checkListItems'>" + userInput + "<table id='optionTable'> <tr><th> <input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'></th><th><select class='course' id='dropMenuCourse"+items+"'><option>Course</option><option>ECE106</option><option>ECE124</option><option>CS138</option><option>MATH119</option><option>SE102</option></select></th><th><select class='prod' id='dropMenuProductivity"+items+"'><option>Productivity</option><option>Very Productive</option><option>Productive</option><option>Not Productive</option></select></th><th><div class='exitIcon' id='exit"+items+"'>X</div></th></tr></table></section>";
+	addToStorage = '<div class="infoSnippet">' + userInput +'<input class="infoButton" type="button" value="Continue"></div>';
 	localStorage.setItem("exit"+items, addToStorage);
 	items++;
 	enterTaskToDiv(userInput);
