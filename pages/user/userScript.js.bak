@@ -332,7 +332,7 @@ function buildGraph(month, color){
 	
 	//Plot title
 	ctx.font = "bold small-caps 38px Arial";
-	ctx.fillText(getName(JSON.parse(localStorage.getItem('monthArray'))[month]) +" "+ d.getFullYear(), canvas.width/2 - 120, 80);
+	ctx.fillText(JSON.parse(localStorage.getItem('monthArray'))[month].name +" "+ d.getFullYear(), canvas.width/2 - 120, 80);
 
 	//Call to render all the assets. The assets will be on top
 	renderAssets(ctx);
