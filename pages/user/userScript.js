@@ -1,19 +1,3 @@
-/*Future implementations:
-	
-	Continue From:
-	- Add settings icon
-	- Default case when there is no data to graph. Print something on the canvas to convey the msg to the end user.
-
-	High cost tasks:
-	-implement feature for graph of every subject
-	-Automatic Time Tracking
-	-[DONE]Allow decimal entries for the hours
-	-[DONE]dynamic scaling 
-
-
-*/
-//Put inside a function that exe in the start
-
 var nameArray = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 window.addEventListener("load",fillupStorage);
@@ -69,7 +53,7 @@ function fillupStorage(){
 
 	if (localStorage.getItem('monthArray') === null){
 
-		for(i = 0; i < monthArray,length();i++){
+		for(i = 0; i < monthArray.length();i++){
 			monthArray[i] = new MonthDate(i+1);
 		}
 
@@ -125,7 +109,6 @@ function init(ctx){
 	var text = document.getElementById("entryField");
 	var button = document.getElementById("buttonOne");
 	var clearEntireStrg = document.getElementById("clearStorage");
-
 	//EventListners
 	ctx.canvas.addEventListener('mousemove', mouseDetection);
 	text.addEventListener("click", clearTxt);
@@ -133,7 +116,6 @@ function init(ctx){
 	clearEntireStrg.addEventListener("click", clearAll);
 
 	$('.exitIcon').click(function(e){
-		
 		var hours = document.querySelector('.loggedHours').value;
 		var course = document.querySelector('.course').value;
 		var prod = document.querySelector('.prod').value;
@@ -255,6 +237,7 @@ function renderGrid(ctx){
 
 	var canvas = document.getElementById('mainCanvas');
 	var ctx = canvas.getContext('2d');
+	// console.log(localStorage.getItem('monthArray'));
 	var days = JSON.parse(localStorage.getItem('monthArray'))[d.getMonth()].dailyHrs.length;
 	ctx.strokeStyle = gridColor;
 	ctx.lineWidth = 1;
@@ -430,7 +413,7 @@ function renderDisplay(){
 function enterTaskToList(userInput){
 	
 	// addToStorage = "<section class='checkListItems'>" + userInput + "<table id='optionTable'> <tr><th> <input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'></th><th><select class='course' id='dropMenuCourse"+items+"'><option>Course</option><option>ECE106</option><option>ECE124</option><option>CS138</option><option>MATH119</option><option>SE102</option></select></th><th><select class='prod' id='dropMenuProductivity"+items+"'><option>Productivity</option><option>Very Productive</option><option>Productive</option><option>Not Productive</option></select></th><th><div class='exitIcon' id='exit"+items+"'>X</div></th></tr></table></section>";
-	addToStorage = '<div class="infoSnippet">' + userInput +'<input class="infoButton" type="button" value="Continue"></div>';
+	addToStorage = '<div class="infoSnippet">' + userInput +'<br><input class="infoButton" type="button" value="Continue"></div>';
 	localStorage.setItem("exit"+items, addToStorage);
 	items++;
 	enterTaskToDiv(userInput);
@@ -449,6 +432,10 @@ function enterHrToDB (hours){
 	monthArray[d.getMonth()].dailyHrs[0] = 3;
 	monthArray[d.getMonth()].dailyHrs[1] = 5;
 	monthArray[d.getMonth()].dailyHrs[2] = 2; 
+	monthArray[d.getMonth()].dailyHrs[4] = 2.5; 
+	monthArray[d.getMonth()].dailyHrs[6] = 2; 
+	monthArray[d.getMonth()].dailyHrs[14] = 2; 
+
 	//TEST CODE	
 
 	localStorage['monthArray'] = JSON.stringify(monthArray);
