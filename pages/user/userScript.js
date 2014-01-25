@@ -53,6 +53,7 @@ function fillupStorage(){
 
 	if (localStorage.getItem('monthArray') === null){
 
+
 		for(i = 0; i < monthArray.length();i++){
 			monthArray[i] = new MonthDate(i+1);
 		}
@@ -62,9 +63,14 @@ function fillupStorage(){
 			monthsArray[i].resetDailyHoursToZero();
 		}
 
+		for (i = 0; i < 12; i++){
+			monthArray[i].days=nameArray[i];
+		}
+
 		localStorage['monthArray'] = JSON.stringify(monthArray);
 	}
 	var ctx = document.getElementById('mainCanvas').getContext('2d');
+
 	init(ctx);
 }
 
@@ -120,7 +126,7 @@ function init(ctx){
 		var course = document.querySelector('.course').value;
 		var prod = document.querySelector('.prod').value;
 
-		if (!isNaN(hours) && course != 'Course' && prod != 'Productivity'){	
+		if (!isNaN(hours) && prod != 'Productivity'){	
 			enterHrToDB (hours);
 			$(this).closest('section').remove();
 			localStorage.removeItem(this.id); 
