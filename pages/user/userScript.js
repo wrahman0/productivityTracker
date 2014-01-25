@@ -34,6 +34,8 @@ function MonthDate(monthNumber){
 	this.resetToZero = resetToZero;
 }
 
+//Chart Plug
+
 function getName(month){
 	if(month.monthNumber>=1&&month.monthNumber<=12){
 		return nameArray[month.monthNumber-1];
@@ -103,6 +105,12 @@ function init(ctx){
 	//Rendering component
 	renderGraph(ctx, d.getMonth(),'#1D568E');
 	renderDisplay(ctx);
+
+	//Timer Implementation
+	var clock = $('.mainClock').FlipClock({
+		clockFace: 'TwelveHourClock'
+	});
+
 
 	// var ctx = document.getElementById('mainCanvas').getContext('2d');
 	var text = document.getElementById("entryField");

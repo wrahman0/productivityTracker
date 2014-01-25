@@ -6,6 +6,18 @@ body{
 	
 }
 
+.container-Chart{
+
+	min-width: 260px; height: 400px; margin: 0 auto;
+}
+
+.mainClock{
+
+	width: 500px;
+	position: fixed;
+	left: 120px;
+
+}
 
 #taskPost{
 
