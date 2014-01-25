@@ -415,6 +415,7 @@ function renderDisplay(){
 	for (var i = 0; i < localStorage.length; i++)
 		if(localStorage.key(i).substring(0,4) == 'exit')
 			taskDisplay.innerHTML += localStorage.getItem(localStorage.key(i));
+		
 }
 
 function enterTaskToList(userInput){

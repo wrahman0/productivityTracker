@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="userStyles.css">
@@ -9,18 +8,20 @@
 		<script src="http://code.highcharts.com/modules/exporting.js"></script>
 		<script src="plugins/flipclock.min.js"></script>
 		<script src="userScript.js"></script>
-		<script src="plugin/JSChart.js"></script>
-		
-	</head>
+		<script src="plugins/JSChart.js"></script>
+		<script src="http://code.highcharts.com/highcharts.js"></script>
+		<script src="http://code.highcharts.com/highcharts-more.js"></script>
+		<script src="http://code.highcharts.com/modules/exporting.js"></script>
 
+	</head>
 	<body>
 		<div id="container">
-			
 			<div id='leftBar'>
-				
+				<div id="container-Guage" style="width: 300px; height: 300px; margin: 0 auto"></div>
 			</div>
 			<div id='centerBar'>
 				<div id="container-Chart"></div>
+
 				<div class="mainClock"></div>
 				<canvas id="mainCanvas" width="0" height="0"></canvas>
 				<form>
@@ -30,7 +31,6 @@
 				</form>
 			</div>
 			<div id='rightBar'>
-
 				<div id="taskList">
 					<div class="infoSnippet">
 						<input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'>
@@ -48,36 +48,8 @@
 							<input id="finish" class="infoButton" type="button" value="Finish">
 						</div>
 					</div>
-					<br>
-					<div class="infoSnippet">
-						<input type='text' class='loggedHours' value='Hours...' id='hours"+items+"'>
-							<option>Productivity</option>
-							<option>0</option>
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-							<option>6</option>
-							<option>7</option>
-							<option>8</option>
-							<option>9</option>
-							<option>10</option>
-						</select>
-						<div id="taskPost">OVERFLOWING...OVERFLOWING...OVERFLOWING...OVERFLOWING...</div>
-						<br>
-						<div id="btnGroup">
-							<input id="continueBtn"class="infoButton" type="button" value="Continue">
-							<input id="pauseBtn" class="infoButton" type="button" value="Pause">
-							<input id="finish" class="infoButton" type="button" value="Finish">
-						</div>
-					</div>
 				</div>
 			</div>
-			
 		</div>
-
-		
-
 	</body>
 </html>

@@ -6,16 +6,16 @@ body{
 	
 }
 
-.container-Chart{
+#container-Chart{
 
-	min-width: 260px; height: 400px; margin: 0 auto;
+	width: 600px; height: 400px; margin-left: 50px;
 }
 
 .mainClock{
 
 	width: 500px;
 	position: fixed;
-	left: 120px;
+	left: 80px;
 
 }
 
@@ -79,7 +79,7 @@ body{
 	padding: 10px;
 	background: #666;
 	position: fixed;
-	width: 25%;
+	width: 20%;
 	height: 100%;
 	top:0;
 	left: 0;
@@ -92,7 +92,7 @@ body{
 	padding: 10px;
 	background: #999;
 	position: fixed;
-	width: 50%;
+	width: 55%;
 	height: 100%;
 	top:0;
 	left: 26%;
