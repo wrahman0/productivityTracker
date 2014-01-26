@@ -10,13 +10,14 @@ body{
 
 	width: 600px; height: 400px;
 	margin: auto;
+
 }
 
 .mainClock{
 
 	width: 500px;
 	position: fixed;
-	left: 80px;
+	left: 160px;
 
 }
 
@@ -98,7 +99,7 @@ body{
 #centerBar{
 
 	padding: 10px;
-	background: #999;
+	background: #FFF;
 	position: absolute;
 	width: 50%;
 	height: 100%;

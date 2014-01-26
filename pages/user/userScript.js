@@ -412,7 +412,7 @@ function renderDisplay(){
 }
 
 function enterTaskToList(userInput){
-	addToStorage = "<div id = 'taskElement'><select><option>Productivity</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>";
+	addToStorage = "<div id = 'taskElement'><select class='drowdown'><option class='label' selected>Productivity</option><option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>";
 	addToStorage +=	"</select><br><h1 style=\"font-size:20px;\">";
 	addToStorage += userInput;
 	addToStorage += "</h1><div id='btnGroup'><input id='continueBtn'class='infoButton' type='button' value='Continue'><input id='pauseBtn' class='infoButton' type='button' value='Pause'><input id='finish' class='infoButton' type='button' value='Finish'></div><br><br></div><br>";
